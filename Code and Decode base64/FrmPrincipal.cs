@@ -23,7 +23,7 @@ namespace Code_and_Decode_base64
         private string textoNormal;
         private string textoDecodificado;
         StreamReader flujoEntrada;
-        
+
 
         #endregion Campos
 
@@ -81,7 +81,7 @@ namespace Code_and_Decode_base64
         {
             string parsedXml = string.Empty;
             parsedXml = Decodificar(textoCodificado);
-            TxtArchivoConvertido.Text= System.Xml.Linq.XDocument.Parse(parsedXml).ToString();
+            TxtArchivoConvertido.Text = System.Xml.Linq.XDocument.Parse(parsedXml).ToString();
         }
 
         private void BtnCodificar_Click(object sender, EventArgs e)
@@ -130,20 +130,33 @@ namespace Code_and_Decode_base64
 
         private void GuardarArchivoDecodificado()
         {
-            Stream myStream;
+            //Stream myStream;
+            string nombreArchivoFinal = string.Empty;
             SaveFileDialog Sfd1 = new SaveFileDialog();
 
-            Sfd1.Filter = "txt files (*.xml)|*.xml|All files (*.*)|*.*";
-            Sfd1.FilterIndex = 2;
+            Sfd1.InitialDirectory = Directory.GetCurrentDirectory();
+            Sfd1.Title = "Guardar archivo";
+            Sfd1.CheckPathExists = true;
             Sfd1.RestoreDirectory = true;
+            Sfd1.Filter = "XML files (*.xml)|*.xml|All files (*.*)|*.*";
+            Sfd1.FilterIndex = 1;
+            Sfd1.DefaultExt = "xml";
 
             if (Sfd1.ShowDialog() == DialogResult.OK)
             {
-                if ((myStream = Sfd1.OpenFile()) != null)
-                {
-                    // Code to write the stream goes here.
-                    myStream.Close();
-                }
+                nombreArchivoFinal = Sfd1.FileName;
+
+                //if ((myStream = Sfd1.OpenFile()) != null)
+                //{
+                StreamWriter sw = File.CreateText(nombreArchivoFinal);
+
+                sw.Write(TxtArchivoConvertido.Text);
+                sw.Close();
+
+                LblArchivoGuardadoOK.Text = "Archivo guardado OK";
+
+                // myStream.Close();
+                //}
             }
         }
     }

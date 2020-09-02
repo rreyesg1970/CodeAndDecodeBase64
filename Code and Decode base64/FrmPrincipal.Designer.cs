@@ -44,6 +44,7 @@
             this.BtnAbrirArchivoNormal = new System.Windows.Forms.Button();
             this.BtnGuardarArchivoDecodificado = new System.Windows.Forms.Button();
             this.Sfd1 = new System.Windows.Forms.SaveFileDialog();
+            this.LblArchivoGuardadoOK = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BtnCodificarArchivo
@@ -184,12 +185,27 @@
             this.BtnGuardarArchivoDecodificado.UseVisualStyleBackColor = true;
             this.BtnGuardarArchivoDecodificado.Click += new System.EventHandler(this.BtnGuardarArchivoDecodificado_Click);
             // 
+            // Sfd1
+            // 
+            this.Sfd1.CheckPathExists = false;
+            this.Sfd1.RestoreDirectory = true;
+            // 
+            // LblArchivoGuardadoOK
+            // 
+            this.LblArchivoGuardadoOK.AutoSize = true;
+            this.LblArchivoGuardadoOK.Location = new System.Drawing.Point(585, 474);
+            this.LblArchivoGuardadoOK.Name = "LblArchivoGuardadoOK";
+            this.LblArchivoGuardadoOK.Size = new System.Drawing.Size(13, 13);
+            this.LblArchivoGuardadoOK.TabIndex = 15;
+            this.LblArchivoGuardadoOK.Text = "?";
+            // 
             // FrmPrincipal
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 522);
+            this.Controls.Add(this.LblArchivoGuardadoOK);
             this.Controls.Add(this.BtnGuardarArchivoDecodificado);
             this.Controls.Add(this.BtnAbrirArchivoNormal);
             this.Controls.Add(this.label5);
@@ -229,6 +245,7 @@
         private System.Windows.Forms.Button BtnAbrirArchivoNormal;
         private System.Windows.Forms.Button BtnGuardarArchivoDecodificado;
         private System.Windows.Forms.SaveFileDialog Sfd1;
+        private System.Windows.Forms.Label LblArchivoGuardadoOK;
     }
 }
 
