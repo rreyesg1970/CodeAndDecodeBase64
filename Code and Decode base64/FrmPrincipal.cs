@@ -70,13 +70,18 @@ namespace Code_and_Decode_base64
 
                 flujoEntrada = new StreamReader(ruta);
                 textoNormal = flujoEntrada.ReadToEnd();
-                TxtArchivoLeido.Text = textoNormal;
+
+                string parsedXml = string.Empty;
+                parsedXml = textoNormal;
+                TxtArchivoLeido.Text = System.Xml.Linq.XDocument.Parse(parsedXml).ToString();
             }
         }
 
         private void BtnDecodificar_Click(object sender, EventArgs e)
         {
-            TxtArchivoConvertido.Text = Decodificar(textoCodificado);
+            string parsedXml = string.Empty;
+            parsedXml = Decodificar(textoCodificado);
+            TxtArchivoConvertido.Text= System.Xml.Linq.XDocument.Parse(parsedXml).ToString();
         }
 
         private void BtnCodificar_Click(object sender, EventArgs e)
@@ -116,6 +121,30 @@ namespace Code_and_Decode_base64
             byte[] encbuff = System.Text.Encoding.UTF8.GetBytes(textoDecodif);
             return Convert.ToBase64String(encbuff);
         }
-            #endregion Metodos
+        #endregion Metodos
+
+        private void BtnGuardarArchivoDecodificado_Click(object sender, EventArgs e)
+        {
+            GuardarArchivoDecodificado();
+        }
+
+        private void GuardarArchivoDecodificado()
+        {
+            Stream myStream;
+            SaveFileDialog Sfd1 = new SaveFileDialog();
+
+            Sfd1.Filter = "txt files (*.xml)|*.xml|All files (*.*)|*.*";
+            Sfd1.FilterIndex = 2;
+            Sfd1.RestoreDirectory = true;
+
+            if (Sfd1.ShowDialog() == DialogResult.OK)
+            {
+                if ((myStream = Sfd1.OpenFile()) != null)
+                {
+                    // Code to write the stream goes here.
+                    myStream.Close();
+                }
+            }
+        }
     }
 }
