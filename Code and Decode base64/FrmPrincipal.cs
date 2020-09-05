@@ -56,8 +56,6 @@ namespace Code_and_Decode_base64
                 flujoEntrada = new StreamReader(ruta);
                 textoCodificado = flujoEntrada.ReadToEnd();
                 TxtArchivoLeido.Text = textoCodificado;
-                //TxtArchivoLeido.SelectionStart = charIndex;
-                //TxtArchivoLeido.SelectionLength = 0;
             }
         }
 
@@ -160,11 +158,6 @@ namespace Code_and_Decode_base64
                 // myStream.Close();
                 //}
             }
-        }
-
-        private void TxtArchivoLeido_DragEnter(object sender, DragEventArgs e)
-        {
-
         }
     }
 }

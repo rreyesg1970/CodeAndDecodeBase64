@@ -77,10 +77,10 @@
             this.TxtArchivoLeido.Location = new System.Drawing.Point(13, 58);
             this.TxtArchivoLeido.Multiline = true;
             this.TxtArchivoLeido.Name = "TxtArchivoLeido";
+            this.TxtArchivoLeido.ReadOnly = true;
             this.TxtArchivoLeido.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.TxtArchivoLeido.Size = new System.Drawing.Size(383, 376);
             this.TxtArchivoLeido.TabIndex = 2;
-            this.TxtArchivoLeido.DragEnter += new System.Windows.Forms.DragEventHandler(this.TxtArchivoLeido_DragEnter);
             // 
             // TxtArchivoConvertido
             // 
