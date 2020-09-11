@@ -145,9 +145,6 @@ namespace Code_and_Decode_base64
             if (Sfd1.ShowDialog() == DialogResult.OK)
             {
                 nombreArchivoFinal = Sfd1.FileName;
-
-                //if ((myStream = Sfd1.OpenFile()) != null)
-                //{
                 StreamWriter sw = File.CreateText(nombreArchivoFinal);
 
                 sw.Write(TxtArchivoConvertido.Text);
@@ -155,8 +152,26 @@ namespace Code_and_Decode_base64
 
                 LblArchivoGuardadoOK.Text = "Archivo guardado OK";
 
-                // myStream.Close();
-                //}
+            }
+        }
+
+        private void FrmPrincipal_Resize(object sender, EventArgs e)
+        {
+            FrmPrincipal frmPrincipal = new FrmPrincipal();
+
+            LblFormAncho.Text = (frmPrincipal.Width / 2).ToString();
+            TxtArchivoLeido.Size = new Size((frmPrincipal.Width / 2), 379);
+
+            Control control = (Control)sender;
+
+            // Ensure the Form remains square (Height = Width).
+            if (control.Size.Height != control.Size.Width)
+            {
+                control.Size = new Size(control.Size.Width, control.Size.Height);
+                LblFormAncho.Text = control.Size.Width.ToString();
+                LblFormAltura.Text = control.Size.Height.ToString();
+
+                // TxtArchivoLeido.Size = Double.Parse(control.Size.Width.ToString());
             }
         }
     }
