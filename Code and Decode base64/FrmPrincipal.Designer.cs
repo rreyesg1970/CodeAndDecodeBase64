@@ -45,6 +45,7 @@
             this.BtnAbrirArchivoCodificado = new System.Windows.Forms.Button();
             this.LblArchivoLeido = new System.Windows.Forms.Label();
             this.BtnLimpiarVentanas = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BtnCodificarArchivo
@@ -89,9 +90,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(473, 525);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(321, 13);
+            this.label4.Size = new System.Drawing.Size(327, 13);
             this.label4.TabIndex = 10;
-            this.label4.Text = "Hecho por Roberto Reyes García, 21 Marzo - 9 Septiembre - 2020";
+            this.label4.Text = "Hecho por Roberto Reyes García, 21 Marzo - 12 Septiembre - 2020";
             // 
             // TxtRuta
             // 
@@ -199,12 +200,23 @@
             this.BtnLimpiarVentanas.UseVisualStyleBackColor = true;
             this.BtnLimpiarVentanas.Click += new System.EventHandler(this.BtnLimpiarVentanas_Click_1);
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 523);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 13);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Versión 1.0.4";
+            // 
             // FrmPrincipal
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 545);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.TxtArchivoLeido);
             this.Controls.Add(this.BtnDecodificarArchivo);
             this.Controls.Add(this.BtnAbrirArchivoCodificado);
@@ -250,6 +262,7 @@
         private System.Windows.Forms.Button BtnAbrirArchivoCodificado;
         private System.Windows.Forms.Label LblArchivoLeido;
         private System.Windows.Forms.Button BtnLimpiarVentanas;
+        private System.Windows.Forms.Label label1;
     }
 }
 

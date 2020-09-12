@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.Xml;
 using System.Windows.Forms;
 using System.IO;
 
@@ -66,17 +67,24 @@ namespace Code_and_Decode_base64
         {
             if (Ofd1.ShowDialog() == DialogResult.OK)
             {
-                BtnDecodificarArchivo.Enabled = false;
-                BtnCodificarArchivo.Enabled = true;
-                ruta = Ofd1.FileName;
-                TxtRuta.Text = ruta;
+                try
+                {
+                    BtnDecodificarArchivo.Enabled = false;
+                    BtnCodificarArchivo.Enabled = true;
+                    ruta = Ofd1.FileName;
+                    TxtRuta.Text = ruta;
 
-                flujoEntrada = new StreamReader(ruta);
-                textoNormal = flujoEntrada.ReadToEnd();
+                    flujoEntrada = new StreamReader(ruta);
+                    textoNormal = flujoEntrada.ReadToEnd();
 
-                string parsedXml = string.Empty;
-                parsedXml = textoNormal;
-                TxtArchivoLeido.Text = System.Xml.Linq.XDocument.Parse(parsedXml).ToString();
+                    string parsedXml = string.Empty;
+                    parsedXml = textoNormal;
+                    TxtArchivoLeido.Text = System.Xml.Linq.XDocument.Parse(parsedXml).ToString();
+                }
+                catch (XmlException ex)
+                {
+                    MessageBox.Show("El archivo leído no es un XML válido", "Error de lectura",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
