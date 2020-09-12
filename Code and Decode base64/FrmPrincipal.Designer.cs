@@ -45,12 +45,6 @@
             this.BtnAbrirArchivoCodificado = new System.Windows.Forms.Button();
             this.LblArchivoLeido = new System.Windows.Forms.Label();
             this.BtnLimpiarVentanas = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.LblFormAncho = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.LblFormAltura = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.LblLocationX = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BtnCodificarArchivo
@@ -203,66 +197,7 @@
             this.BtnLimpiarVentanas.TabIndex = 20;
             this.BtnLimpiarVentanas.Text = "Limpia Ventanas";
             this.BtnLimpiarVentanas.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 520);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "Ancho";
-            // 
-            // LblFormAncho
-            // 
-            this.LblFormAncho.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.LblFormAncho.AutoSize = true;
-            this.LblFormAncho.Location = new System.Drawing.Point(72, 520);
-            this.LblFormAncho.Name = "LblFormAncho";
-            this.LblFormAncho.Size = new System.Drawing.Size(13, 13);
-            this.LblFormAncho.TabIndex = 22;
-            this.LblFormAncho.Text = "?";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(144, 520);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(25, 13);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Alto";
-            // 
-            // LblFormAltura
-            // 
-            this.LblFormAltura.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.LblFormAltura.AutoSize = true;
-            this.LblFormAltura.Location = new System.Drawing.Point(186, 520);
-            this.LblFormAltura.Name = "LblFormAltura";
-            this.LblFormAltura.Size = new System.Drawing.Size(13, 13);
-            this.LblFormAltura.TabIndex = 24;
-            this.LblFormAltura.Text = "?";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(263, 520);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(26, 13);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "X = ";
-            // 
-            // LblLocationX
-            // 
-            this.LblLocationX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.LblLocationX.AutoSize = true;
-            this.LblLocationX.Location = new System.Drawing.Point(296, 519);
-            this.LblLocationX.Name = "LblLocationX";
-            this.LblLocationX.Size = new System.Drawing.Size(35, 13);
-            this.LblLocationX.TabIndex = 26;
-            this.LblLocationX.Text = "label8";
+            this.BtnLimpiarVentanas.Click += new System.EventHandler(this.BtnLimpiarVentanas_Click_1);
             // 
             // FrmPrincipal
             // 
@@ -270,12 +205,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 545);
-            this.Controls.Add(this.LblLocationX);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.LblFormAltura);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.LblFormAncho);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.TxtArchivoLeido);
             this.Controls.Add(this.BtnDecodificarArchivo);
             this.Controls.Add(this.BtnAbrirArchivoCodificado);
@@ -295,6 +224,8 @@
             this.Name = "FrmPrincipal";
             this.Text = "Decodificar y Codificar Base64";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
+            this.ResizeBegin += new System.EventHandler(this.FrmPrincipal_ResizeBegin);
+            this.ResizeEnd += new System.EventHandler(this.FrmPrincipal_ResizeEnd);
             this.Resize += new System.EventHandler(this.FrmPrincipal_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -319,12 +250,6 @@
         private System.Windows.Forms.Button BtnAbrirArchivoCodificado;
         private System.Windows.Forms.Label LblArchivoLeido;
         private System.Windows.Forms.Button BtnLimpiarVentanas;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label LblFormAncho;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label LblFormAltura;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label LblLocationX;
     }
 }
 

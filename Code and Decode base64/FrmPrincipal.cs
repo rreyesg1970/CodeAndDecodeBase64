@@ -24,6 +24,9 @@ namespace Code_and_Decode_base64
         private string textoDecodificado;
         StreamReader flujoEntrada;
 
+        string textoCodificadoTemp;
+        string textoDecodificadoTemp;
+
 
         #endregion Campos
 
@@ -89,7 +92,7 @@ namespace Code_and_Decode_base64
             TxtArchivoConvertido.Text = Codificar(textoNormal);
         }
 
-        private void BtnLimpiarVentanas_Click(object sender, EventArgs e)
+        private void BtnLimpiarVentanas_Click_1(object sender, EventArgs e)
         {
             textoCodificado = string.Empty;
             textoDecodificado = string.Empty;
@@ -171,13 +174,9 @@ namespace Code_and_Decode_base64
             if (control.Size.Height != control.Size.Width)
             {
                 control.Size = new Size(control.Size.Width, control.Size.Height);
-                LblFormAncho.Text = ((control.Size.Width / 2) - diferenciaAncho).ToString();
-                LblFormAltura.Text = (control.Size.Height - diferenciaAlto).ToString();
 
                 TxtArchivoLeido.Size = new Size((control.Size.Width / 2) - diferenciaAncho,
                                             control.Size.Height - diferenciaAlto);
-
-                //LblLocationX.Text = ((control.Size.Width / 2) + diferenciaAncho).ToString();
 
                 LblArchivoConvertido.Location = new Point(((control.Size.Width / 2) + diferenciaAncho - 34), 46);
                 TxtArchivoConvertido.Location = new Point(((control.Size.Width / 2) + diferenciaAncho - 34), 62);
@@ -188,8 +187,23 @@ namespace Code_and_Decode_base64
 
                 TxtArchivoConvertido.Size = new Size((control.Size.Width / 2) - diferenciaAncho,
                                            control.Size.Height - diferenciaAlto);
-
             }
-        }   
+        }
+
+        private void FrmPrincipal_ResizeBegin(object sender, EventArgs e)
+        {
+            textoCodificadoTemp = TxtArchivoLeido.Text;
+            textoDecodificadoTemp = TxtArchivoConvertido.Text;
+            TxtArchivoLeido.Text = string.Empty;
+            TxtArchivoConvertido.Text = string.Empty;
+        }
+
+        private void FrmPrincipal_ResizeEnd(object sender, EventArgs e)
+        {
+            TxtArchivoLeido.Text = textoCodificadoTemp;
+            TxtArchivoConvertido.Text = textoDecodificadoTemp;
+        }
+
+        
     }
 }
