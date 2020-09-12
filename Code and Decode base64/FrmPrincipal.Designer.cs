@@ -32,7 +32,7 @@
             this.BtnCodificarArchivo = new System.Windows.Forms.Button();
             this.TxtArchivoConvertido = new System.Windows.Forms.TextBox();
             this.Ofd1 = new System.Windows.Forms.OpenFileDialog();
-            this.label2 = new System.Windows.Forms.Label();
+            this.LblArchivoConvertido = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.TxtRuta = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -41,9 +41,9 @@
             this.Sfd1 = new System.Windows.Forms.SaveFileDialog();
             this.LblArchivoGuardadoOK = new System.Windows.Forms.Label();
             this.TxtArchivoLeido = new System.Windows.Forms.TextBox();
-            this.BtnDecodificararchivo = new System.Windows.Forms.Button();
+            this.BtnDecodificarArchivo = new System.Windows.Forms.Button();
             this.BtnAbrirArchivoCodificado = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LblArchivoLeido = new System.Windows.Forms.Label();
             this.BtnLimpiarVentanas = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.LblFormAncho = new System.Windows.Forms.Label();
@@ -79,15 +79,15 @@
             // 
             this.Ofd1.FileName = "archivo";
             // 
-            // label2
+            // LblArchivoConvertido
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(407, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Archivo convertido";
+            this.LblArchivoConvertido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LblArchivoConvertido.AutoSize = true;
+            this.LblArchivoConvertido.Location = new System.Drawing.Point(407, 46);
+            this.LblArchivoConvertido.Name = "LblArchivoConvertido";
+            this.LblArchivoConvertido.Size = new System.Drawing.Size(96, 13);
+            this.LblArchivoConvertido.TabIndex = 6;
+            this.LblArchivoConvertido.Text = "Archivo convertido";
             // 
             // label4
             // 
@@ -163,15 +163,16 @@
             this.TxtArchivoLeido.Size = new System.Drawing.Size(381, 379);
             this.TxtArchivoLeido.TabIndex = 17;
             // 
-            // BtnDecodificararchivo
+            // BtnDecodificarArchivo
             // 
-            this.BtnDecodificararchivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.BtnDecodificararchivo.Location = new System.Drawing.Point(227, 449);
-            this.BtnDecodificararchivo.Name = "BtnDecodificararchivo";
-            this.BtnDecodificararchivo.Size = new System.Drawing.Size(167, 23);
-            this.BtnDecodificararchivo.TabIndex = 16;
-            this.BtnDecodificararchivo.Text = "Decodificar";
-            this.BtnDecodificararchivo.UseVisualStyleBackColor = true;
+            this.BtnDecodificarArchivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.BtnDecodificarArchivo.Location = new System.Drawing.Point(227, 449);
+            this.BtnDecodificarArchivo.Name = "BtnDecodificarArchivo";
+            this.BtnDecodificarArchivo.Size = new System.Drawing.Size(167, 23);
+            this.BtnDecodificarArchivo.TabIndex = 16;
+            this.BtnDecodificarArchivo.Text = "Decodificar";
+            this.BtnDecodificarArchivo.UseVisualStyleBackColor = true;
+            this.BtnDecodificarArchivo.Click += new System.EventHandler(this.BtnDecodificararchivo_Click);
             // 
             // BtnAbrirArchivoCodificado
             // 
@@ -184,14 +185,14 @@
             this.BtnAbrirArchivoCodificado.UseVisualStyleBackColor = true;
             this.BtnAbrirArchivoCodificado.Click += new System.EventHandler(this.BtnAbrirArchivoCodificado_Click);
             // 
-            // label1
+            // LblArchivoLeido
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 46);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 13);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Archivo leído";
+            this.LblArchivoLeido.AutoSize = true;
+            this.LblArchivoLeido.Location = new System.Drawing.Point(12, 46);
+            this.LblArchivoLeido.Name = "LblArchivoLeido";
+            this.LblArchivoLeido.Size = new System.Drawing.Size(70, 13);
+            this.LblArchivoLeido.TabIndex = 19;
+            this.LblArchivoLeido.Text = "Archivo leído";
             // 
             // BtnLimpiarVentanas
             // 
@@ -276,9 +277,9 @@
             this.Controls.Add(this.LblFormAncho);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.TxtArchivoLeido);
-            this.Controls.Add(this.BtnDecodificararchivo);
+            this.Controls.Add(this.BtnDecodificarArchivo);
             this.Controls.Add(this.BtnAbrirArchivoCodificado);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LblArchivoLeido);
             this.Controls.Add(this.BtnLimpiarVentanas);
             this.Controls.Add(this.TxtArchivoConvertido);
             this.Controls.Add(this.LblArchivoGuardadoOK);
@@ -286,7 +287,7 @@
             this.Controls.Add(this.BtnCodificarArchivo);
             this.Controls.Add(this.BtnGuardarArchivoDecodificado);
             this.Controls.Add(this.TxtRuta);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.LblArchivoConvertido);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.BtnAbrirArchivoNormal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -294,7 +295,6 @@
             this.Name = "FrmPrincipal";
             this.Text = "Decodificar y Codificar Base64";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
-            this.ResizeBegin += new System.EventHandler(this.FrmPrincipal_ResizeBegin);
             this.Resize += new System.EventHandler(this.FrmPrincipal_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -306,7 +306,7 @@
         private System.Windows.Forms.Button BtnCodificarArchivo;
         private System.Windows.Forms.TextBox TxtArchivoConvertido;
         private System.Windows.Forms.OpenFileDialog Ofd1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label LblArchivoConvertido;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox TxtRuta;
         private System.Windows.Forms.Label label5;
@@ -315,9 +315,9 @@
         private System.Windows.Forms.SaveFileDialog Sfd1;
         private System.Windows.Forms.Label LblArchivoGuardadoOK;
         private System.Windows.Forms.TextBox TxtArchivoLeido;
-        private System.Windows.Forms.Button BtnDecodificararchivo;
+        private System.Windows.Forms.Button BtnDecodificarArchivo;
         private System.Windows.Forms.Button BtnAbrirArchivoCodificado;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LblArchivoLeido;
         private System.Windows.Forms.Button BtnLimpiarVentanas;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label LblFormAncho;

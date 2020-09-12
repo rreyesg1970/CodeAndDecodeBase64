@@ -39,7 +39,7 @@ namespace Code_and_Decode_base64
         #region Eventos
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-            BtnDecodificararchivo.Enabled = false;
+            BtnDecodificarArchivo.Enabled = false;
             BtnCodificarArchivo.Enabled = false;
             //
         }
@@ -48,7 +48,7 @@ namespace Code_and_Decode_base64
         {
             if (Ofd1.ShowDialog() == DialogResult.OK)
             {
-                BtnDecodificararchivo.Enabled = true;
+                BtnDecodificarArchivo.Enabled = true;
                 BtnCodificarArchivo.Enabled = false;
                 ruta = Ofd1.FileName;
                 TxtRuta.Text = ruta;
@@ -63,7 +63,7 @@ namespace Code_and_Decode_base64
         {
             if (Ofd1.ShowDialog() == DialogResult.OK)
             {
-                BtnDecodificararchivo.Enabled = false;
+                BtnDecodificarArchivo.Enabled = false;
                 BtnCodificarArchivo.Enabled = true;
                 ruta = Ofd1.FileName;
                 TxtRuta.Text = ruta;
@@ -77,7 +77,7 @@ namespace Code_and_Decode_base64
             }
         }
 
-        private void BtnDecodificar_Click(object sender, EventArgs e)
+        private void BtnDecodificararchivo_Click(object sender, EventArgs e)
         {
             string parsedXml = string.Empty;
             parsedXml = Decodificar(textoCodificado);
@@ -96,6 +96,16 @@ namespace Code_and_Decode_base64
             TxtArchivoConvertido.Clear();
             TxtArchivoLeido.Clear();
             TxtRuta.Clear();
+        }
+
+        private void BtnGuardarArchivoDecodificado_Click(object sender, EventArgs e)
+        {
+            GuardarArchivoDecodificado();
+        }
+
+        private void FrmPrincipal_Resize(object sender, EventArgs e)
+        {
+           CambioTamañoTextBox(sender);
         }
         #endregion Eventos
 
@@ -122,12 +132,6 @@ namespace Code_and_Decode_base64
             return Convert.ToBase64String(encbuff);
         }
         #endregion Metodos
-
-        private void BtnGuardarArchivoDecodificado_Click(object sender, EventArgs e)
-        {
-            GuardarArchivoDecodificado();
-        }
-
         private void GuardarArchivoDecodificado()
         {
             //Stream myStream;
@@ -155,16 +159,6 @@ namespace Code_and_Decode_base64
             }
         }
 
-        private void FrmPrincipal_Resize(object sender, EventArgs e)
-        {
-            CambioTamañoTextBox(sender);
-        }
-
-        private void FrmPrincipal_ResizeBegin(object sender, EventArgs e)
-        {
-            // CambioTamañoTextBox(sender);
-        }
-
         private void CambioTamañoTextBox(object sender)
         {
             int diferenciaAncho = 33;
@@ -185,12 +179,17 @@ namespace Code_and_Decode_base64
 
                 //LblLocationX.Text = ((control.Size.Width / 2) + diferenciaAncho).ToString();
 
+                LblArchivoConvertido.Location = new Point(((control.Size.Width / 2) + diferenciaAncho - 34), 46);
                 TxtArchivoConvertido.Location = new Point(((control.Size.Width / 2) + diferenciaAncho - 34), 62);
+                BtnAbrirArchivoNormal.Location = new Point(((control.Size.Width / 2) + diferenciaAncho - 34), control.Size.Height - 135);
+                BtnGuardarArchivoDecodificado.Location = new Point(((control.Size.Width / 2) + diferenciaAncho - 34), control.Size.Height - 105);
+                LblArchivoGuardadoOK.Location = new Point(((control.Size.Width / 2) + diferenciaAncho + 145), control.Size.Height - 134);
+                BtnCodificarArchivo.Location = new Point(((control.Size.Width / 2) + diferenciaAncho + 187), control.Size.Height - 135);
 
                 TxtArchivoConvertido.Size = new Size((control.Size.Width / 2) - diferenciaAncho,
                                            control.Size.Height - diferenciaAlto);
 
             }
-        }
+        }   
     }
 }
