@@ -49,14 +49,16 @@
             this.LblFormAncho = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.LblFormAltura = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.LblLocationX = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BtnCodificarArchivo
             // 
-            this.BtnCodificarArchivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnCodificarArchivo.Location = new System.Drawing.Point(678, 449);
+            this.BtnCodificarArchivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnCodificarArchivo.Location = new System.Drawing.Point(633, 449);
             this.BtnCodificarArchivo.Name = "BtnCodificarArchivo";
-            this.BtnCodificarArchivo.Size = new System.Drawing.Size(116, 23);
+            this.BtnCodificarArchivo.Size = new System.Drawing.Size(167, 23);
             this.BtnCodificarArchivo.TabIndex = 0;
             this.BtnCodificarArchivo.Text = "Codificar";
             this.BtnCodificarArchivo.UseVisualStyleBackColor = true;
@@ -64,14 +66,13 @@
             // 
             // TxtArchivoConvertido
             // 
-            this.TxtArchivoConvertido.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtArchivoConvertido.Location = new System.Drawing.Point(636, 62);
+            this.TxtArchivoConvertido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtArchivoConvertido.Location = new System.Drawing.Point(411, 62);
             this.TxtArchivoConvertido.Multiline = true;
             this.TxtArchivoConvertido.Name = "TxtArchivoConvertido";
             this.TxtArchivoConvertido.ReadOnly = true;
             this.TxtArchivoConvertido.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.TxtArchivoConvertido.Size = new System.Drawing.Size(162, 379);
+            this.TxtArchivoConvertido.Size = new System.Drawing.Size(387, 379);
             this.TxtArchivoConvertido.TabIndex = 3;
             // 
             // Ofd1
@@ -90,7 +91,7 @@
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(473, 525);
             this.label4.Name = "label4";
@@ -116,7 +117,7 @@
             // 
             // BtnAbrirArchivoNormal
             // 
-            this.BtnAbrirArchivoNormal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnAbrirArchivoNormal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnAbrirArchivoNormal.Location = new System.Drawing.Point(411, 448);
             this.BtnAbrirArchivoNormal.Name = "BtnAbrirArchivoNormal";
             this.BtnAbrirArchivoNormal.Size = new System.Drawing.Size(160, 23);
@@ -127,7 +128,7 @@
             // 
             // BtnGuardarArchivoDecodificado
             // 
-            this.BtnGuardarArchivoDecodificado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnGuardarArchivoDecodificado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnGuardarArchivoDecodificado.Location = new System.Drawing.Point(411, 478);
             this.BtnGuardarArchivoDecodificado.Name = "BtnGuardarArchivoDecodificado";
             this.BtnGuardarArchivoDecodificado.Size = new System.Drawing.Size(160, 23);
@@ -143,7 +144,7 @@
             // 
             // LblArchivoGuardadoOK
             // 
-            this.LblArchivoGuardadoOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LblArchivoGuardadoOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.LblArchivoGuardadoOK.AutoSize = true;
             this.LblArchivoGuardadoOK.Location = new System.Drawing.Point(591, 448);
             this.LblArchivoGuardadoOK.Name = "LblArchivoGuardadoOK";
@@ -154,8 +155,6 @@
             // TxtArchivoLeido
             // 
             this.TxtArchivoLeido.AllowDrop = true;
-            this.TxtArchivoLeido.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtArchivoLeido.Location = new System.Drawing.Point(13, 62);
             this.TxtArchivoLeido.Multiline = true;
             this.TxtArchivoLeido.Name = "TxtArchivoLeido";
@@ -166,21 +165,24 @@
             // 
             // BtnDecodificararchivo
             // 
-            this.BtnDecodificararchivo.Location = new System.Drawing.Point(280, 449);
+            this.BtnDecodificararchivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.BtnDecodificararchivo.Location = new System.Drawing.Point(227, 449);
             this.BtnDecodificararchivo.Name = "BtnDecodificararchivo";
-            this.BtnDecodificararchivo.Size = new System.Drawing.Size(116, 23);
+            this.BtnDecodificararchivo.Size = new System.Drawing.Size(167, 23);
             this.BtnDecodificararchivo.TabIndex = 16;
             this.BtnDecodificararchivo.Text = "Decodificar";
             this.BtnDecodificararchivo.UseVisualStyleBackColor = true;
             // 
             // BtnAbrirArchivoCodificado
             // 
+            this.BtnAbrirArchivoCodificado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtnAbrirArchivoCodificado.Location = new System.Drawing.Point(13, 449);
             this.BtnAbrirArchivoCodificado.Name = "BtnAbrirArchivoCodificado";
             this.BtnAbrirArchivoCodificado.Size = new System.Drawing.Size(167, 23);
             this.BtnAbrirArchivoCodificado.TabIndex = 18;
             this.BtnAbrirArchivoCodificado.Text = "Leer Archivo XML Codificado";
             this.BtnAbrirArchivoCodificado.UseVisualStyleBackColor = true;
+            this.BtnAbrirArchivoCodificado.Click += new System.EventHandler(this.BtnAbrirArchivoCodificado_Click);
             // 
             // label1
             // 
@@ -193,6 +195,7 @@
             // 
             // BtnLimpiarVentanas
             // 
+            this.BtnLimpiarVentanas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BtnLimpiarVentanas.Location = new System.Drawing.Point(13, 478);
             this.BtnLimpiarVentanas.Name = "BtnLimpiarVentanas";
             this.BtnLimpiarVentanas.Size = new System.Drawing.Size(167, 23);
@@ -202,6 +205,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(15, 520);
             this.label3.Name = "label3";
@@ -211,6 +215,7 @@
             // 
             // LblFormAncho
             // 
+            this.LblFormAncho.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.LblFormAncho.AutoSize = true;
             this.LblFormAncho.Location = new System.Drawing.Point(72, 520);
             this.LblFormAncho.Name = "LblFormAncho";
@@ -220,6 +225,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(144, 520);
             this.label6.Name = "label6";
@@ -229,6 +235,7 @@
             // 
             // LblFormAltura
             // 
+            this.LblFormAltura.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.LblFormAltura.AutoSize = true;
             this.LblFormAltura.Location = new System.Drawing.Point(186, 520);
             this.LblFormAltura.Name = "LblFormAltura";
@@ -236,12 +243,34 @@
             this.LblFormAltura.TabIndex = 24;
             this.LblFormAltura.Text = "?";
             // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(263, 520);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(26, 13);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "X = ";
+            // 
+            // LblLocationX
+            // 
+            this.LblLocationX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.LblLocationX.AutoSize = true;
+            this.LblLocationX.Location = new System.Drawing.Point(296, 519);
+            this.LblLocationX.Name = "LblLocationX";
+            this.LblLocationX.Size = new System.Drawing.Size(35, 13);
+            this.LblLocationX.TabIndex = 26;
+            this.LblLocationX.Text = "label8";
+            // 
             // FrmPrincipal
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 545);
+            this.Controls.Add(this.LblLocationX);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.LblFormAltura);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.LblFormAncho);
@@ -261,10 +290,11 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.BtnAbrirArchivoNormal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(828, 584);
             this.Name = "FrmPrincipal";
             this.Text = "Decodificar y Codificar Base64";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
+            this.ResizeBegin += new System.EventHandler(this.FrmPrincipal_ResizeBegin);
             this.Resize += new System.EventHandler(this.FrmPrincipal_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -293,6 +323,8 @@
         private System.Windows.Forms.Label LblFormAncho;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label LblFormAltura;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label LblLocationX;
     }
 }
 

@@ -44,7 +44,7 @@ namespace Code_and_Decode_base64
             //
         }
 
-        private void BtnAbrirArchivo_Click(object sender, EventArgs e)
+        private void BtnAbrirArchivoCodificado_Click(object sender, EventArgs e)
         {
             if (Ofd1.ShowDialog() == DialogResult.OK)
             {
@@ -157,10 +157,19 @@ namespace Code_and_Decode_base64
 
         private void FrmPrincipal_Resize(object sender, EventArgs e)
         {
-            FrmPrincipal frmPrincipal = new FrmPrincipal();
+            CambioTamañoTextBox(sender);
+        }
 
-            LblFormAncho.Text = (frmPrincipal.Width / 2).ToString();
-            TxtArchivoLeido.Size = new Size((frmPrincipal.Width / 2), 379);
+        private void FrmPrincipal_ResizeBegin(object sender, EventArgs e)
+        {
+            // CambioTamañoTextBox(sender);
+        }
+
+        private void CambioTamañoTextBox(object sender)
+        {
+            int diferenciaAncho = 33;
+            int diferenciaAlto = 205;
+            FrmPrincipal frmPrincipal = new FrmPrincipal();
 
             Control control = (Control)sender;
 
@@ -168,10 +177,19 @@ namespace Code_and_Decode_base64
             if (control.Size.Height != control.Size.Width)
             {
                 control.Size = new Size(control.Size.Width, control.Size.Height);
-                LblFormAncho.Text = control.Size.Width.ToString();
-                LblFormAltura.Text = control.Size.Height.ToString();
+                LblFormAncho.Text = ((control.Size.Width / 2) - diferenciaAncho).ToString();
+                LblFormAltura.Text = (control.Size.Height - diferenciaAlto).ToString();
 
-                // TxtArchivoLeido.Size = Double.Parse(control.Size.Width.ToString());
+                TxtArchivoLeido.Size = new Size((control.Size.Width / 2) - diferenciaAncho,
+                                            control.Size.Height - diferenciaAlto);
+
+                //LblLocationX.Text = ((control.Size.Width / 2) + diferenciaAncho).ToString();
+
+                TxtArchivoConvertido.Location = new Point(((control.Size.Width / 2) + diferenciaAncho - 34), 62);
+
+                TxtArchivoConvertido.Size = new Size((control.Size.Width / 2) - diferenciaAncho,
+                                           control.Size.Height - diferenciaAlto);
+
             }
         }
     }
