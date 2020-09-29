@@ -46,6 +46,7 @@
             this.LblArchivoLeido = new System.Windows.Forms.Label();
             this.BtnLimpiarVentanas = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.LblDragAndDrop = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BtnCodificarArchivo
@@ -69,6 +70,8 @@
             this.TxtArchivoConvertido.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.TxtArchivoConvertido.Size = new System.Drawing.Size(387, 379);
             this.TxtArchivoConvertido.TabIndex = 3;
+            this.TxtArchivoConvertido.DragDrop += new System.Windows.Forms.DragEventHandler(this.TxtArchivoConvertido_DragDrop);
+            this.TxtArchivoConvertido.DragEnter += new System.Windows.Forms.DragEventHandler(this.TxtArchivoConvertido_DragEnter);
             // 
             // Ofd1
             // 
@@ -157,6 +160,8 @@
             this.TxtArchivoLeido.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.TxtArchivoLeido.Size = new System.Drawing.Size(381, 379);
             this.TxtArchivoLeido.TabIndex = 17;
+            this.TxtArchivoLeido.DragDrop += new System.Windows.Forms.DragEventHandler(this.TxtArchivoLeido_DragDrop);
+            this.TxtArchivoLeido.DragEnter += new System.Windows.Forms.DragEventHandler(this.TxtArchivoLeido_DragEnter);
             // 
             // BtnDecodificarArchivo
             // 
@@ -210,12 +215,24 @@
             this.label1.TabIndex = 21;
             this.label1.Text = "Versión 1.0.4";
             // 
+            // LblDragAndDrop
+            // 
+            this.LblDragAndDrop.AutoSize = true;
+            this.LblDragAndDrop.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblDragAndDrop.ForeColor = System.Drawing.Color.Blue;
+            this.LblDragAndDrop.Location = new System.Drawing.Point(30, 243);
+            this.LblDragAndDrop.Name = "LblDragAndDrop";
+            this.LblDragAndDrop.Size = new System.Drawing.Size(328, 13);
+            this.LblDragAndDrop.TabIndex = 22;
+            this.LblDragAndDrop.Text = "Arrastre el archivo aquí o use el botón Leer Archivo XML Codificado";
+            // 
             // FrmPrincipal
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 545);
+            this.Controls.Add(this.LblDragAndDrop);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TxtArchivoLeido);
             this.Controls.Add(this.BtnDecodificarArchivo);
@@ -234,6 +251,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(828, 584);
             this.Name = "FrmPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Decodificar y Codificar Base64";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.ResizeBegin += new System.EventHandler(this.FrmPrincipal_ResizeBegin);
@@ -263,6 +281,7 @@
         private System.Windows.Forms.Label LblArchivoLeido;
         private System.Windows.Forms.Button BtnLimpiarVentanas;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LblDragAndDrop;
     }
 }
 

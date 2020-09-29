@@ -54,12 +54,43 @@ namespace Code_and_Decode_base64
             {
                 BtnDecodificarArchivo.Enabled = true;
                 BtnCodificarArchivo.Enabled = false;
+                LblDragAndDrop.Visible = false;
                 ruta = Ofd1.FileName;
                 TxtRuta.Text = ruta;
 
                 flujoEntrada = new StreamReader(ruta);
                 textoCodificado = flujoEntrada.ReadToEnd();
                 TxtArchivoLeido.Text = textoCodificado;
+            }
+        }
+
+        private void TxtArchivoLeido_DragDrop(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.All;
+        }
+
+        private void TxtArchivoLeido_DragEnter(object sender, DragEventArgs e)
+        {
+            string[] archivos = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+
+            TxtRuta.Text = archivos[0];
+            var archivo = TxtRuta.Text;
+            FileInfo file = new FileInfo(archivo);
+
+            flujoEntrada = new StreamReader(archivos[0]);
+            textoCodificado = flujoEntrada.ReadToEnd();
+            TxtArchivoLeido.Text = textoCodificado;
+
+            if (file.Extension != ".XML")
+            {
+                MessageBox.Show("El archivo seleccionado no es un documento XML", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                BtnDecodificarArchivo.Enabled = true;
+                BtnCodificarArchivo.Enabled = false;
+                LblDragAndDrop.Visible = false;
             }
         }
 
@@ -90,9 +121,27 @@ namespace Code_and_Decode_base64
 
         private void BtnDecodificararchivo_Click(object sender, EventArgs e)
         {
-            string parsedXml = string.Empty;
-            parsedXml = Decodificar(textoCodificado);
-            TxtArchivoConvertido.Text = System.Xml.Linq.XDocument.Parse(parsedXml).ToString();
+            try
+            {
+                string parsedXml = string.Empty;
+                parsedXml = Decodificar(textoCodificado);
+                TxtArchivoConvertido.Text = System.Xml.Linq.XDocument.Parse(parsedXml).ToString();
+            }
+            catch (XmlException ex)
+            {
+                MessageBox.Show("El archivo leído no se pudo convertir a XML", "Error de lectura", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
+
+        private void TxtArchivoConvertido_DragDrop(object sender, DragEventArgs e)
+        {
+
+        }
+
+        private void TxtArchivoConvertido_DragEnter(object sender, DragEventArgs e)
+        {
+
         }
 
         private void BtnCodificar_Click(object sender, EventArgs e)
@@ -107,6 +156,7 @@ namespace Code_and_Decode_base64
             TxtArchivoConvertido.Clear();
             TxtArchivoLeido.Clear();
             TxtRuta.Clear();
+            LblDragAndDrop.Visible = true;
         }
 
         private void BtnGuardarArchivoDecodificado_Click(object sender, EventArgs e)
@@ -212,6 +262,6 @@ namespace Code_and_Decode_base64
             TxtArchivoConvertido.Text = textoDecodificadoTemp;
         }
 
-        
+       
     }
 }
