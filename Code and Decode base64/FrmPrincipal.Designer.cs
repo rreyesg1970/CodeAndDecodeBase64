@@ -93,9 +93,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(473, 525);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(327, 13);
+            this.label4.Size = new System.Drawing.Size(306, 13);
             this.label4.TabIndex = 10;
-            this.label4.Text = "Hecho por Roberto Reyes García, 21 Marzo - 12 Septiembre - 2020";
+            this.label4.Text = "Hecho por Roberto Reyes García, 21 Marzo - 1 Octubre - 2020";
             // 
             // TxtRuta
             // 
@@ -120,7 +120,7 @@
             this.BtnAbrirArchivoNormal.Name = "BtnAbrirArchivoNormal";
             this.BtnAbrirArchivoNormal.Size = new System.Drawing.Size(160, 23);
             this.BtnAbrirArchivoNormal.TabIndex = 13;
-            this.BtnAbrirArchivoNormal.Text = "Leer Archivo XML  normal";
+            this.BtnAbrirArchivoNormal.Text = "Abrir Archivo XML  normal";
             this.BtnAbrirArchivoNormal.UseVisualStyleBackColor = true;
             this.BtnAbrirArchivoNormal.Click += new System.EventHandler(this.BtnAbrirArchivoNormal_Click);
             // 
@@ -181,7 +181,7 @@
             this.BtnAbrirArchivoCodificado.Name = "BtnAbrirArchivoCodificado";
             this.BtnAbrirArchivoCodificado.Size = new System.Drawing.Size(167, 23);
             this.BtnAbrirArchivoCodificado.TabIndex = 18;
-            this.BtnAbrirArchivoCodificado.Text = "Leer Archivo XML Codificado";
+            this.BtnAbrirArchivoCodificado.Text = "Abrir Archivo XML Codificado";
             this.BtnAbrirArchivoCodificado.UseVisualStyleBackColor = true;
             this.BtnAbrirArchivoCodificado.Click += new System.EventHandler(this.BtnAbrirArchivoCodificado_Click);
             // 

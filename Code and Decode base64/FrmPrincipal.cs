@@ -20,6 +20,8 @@ namespace Code_and_Decode_base64
     {
         #region Campos
         private string ruta;
+        private string rutayArchivo;
+        private string nombreArchivo;
         private string textoCodificado;
         private string textoNormal;
         private string textoDecodificado;
@@ -56,7 +58,9 @@ namespace Code_and_Decode_base64
                 BtnCodificarArchivo.Enabled = false;
                 LblDragAndDrop.Visible = false;
                 ruta = Ofd1.FileName;
+                rutayArchivo = ruta.Substring(0, ruta.LastIndexOf('\\'));
                 TxtRuta.Text = ruta;
+                nombreArchivo = Ofd1.SafeFileName;
 
                 flujoEntrada = new StreamReader(ruta);
                 textoCodificado = flujoEntrada.ReadToEnd();
@@ -81,9 +85,9 @@ namespace Code_and_Decode_base64
             textoCodificado = flujoEntrada.ReadToEnd();
             TxtArchivoLeido.Text = textoCodificado;
 
-            if (file.Extension != ".XML")
+            if (file.Extension != ".txt")
             {
-                MessageBox.Show("El archivo seleccionado no es un documento XML", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El archivo seleccionado no es válido", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             else
@@ -206,6 +210,9 @@ namespace Code_and_Decode_base64
             Sfd1.Filter = "XML files (*.xml)|*.xml|All files (*.*)|*.*";
             Sfd1.FilterIndex = 1;
             Sfd1.DefaultExt = "xml";
+            // nombreArchivo = Path.GetFileName(TxtRuta.Text);
+            nombreArchivo = Path.GetFileNameWithoutExtension(TxtRuta.Text);
+            Sfd1.FileName = nombreArchivo;
 
             if (Sfd1.ShowDialog() == DialogResult.OK)
             {
